@@ -1,7 +1,6 @@
 FROM node:14-alpine
 WORKDIR /app
-COPY package.json package.json
-RUN npm install
-COPY . . 
-EXPOSE 9981
+COPY . .
+RUN npm install express stripe dotenv
+EXPOSE 3000
 CMD ["node","server.js"]
